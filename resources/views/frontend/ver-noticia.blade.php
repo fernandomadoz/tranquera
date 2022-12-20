@@ -58,12 +58,16 @@
       <div class="col-md-8"> 
         <!--========== BEGIN .POST ==========-->
         <div class="post post-full clearfix">
-          <div class="entry-media"> <a href="#"><img src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $Noticia->file_imagen ?>" alt="Foto" class="img-responsive"></a> </div>
+
           <div class="entry-main">
             <div class="entry-title">
-              <h4 class="entry-title"><?php echo $Noticia->titulo ?></h4>
+              <h1 class="entry-title"><?php echo $Noticia->titulo ?></h1>
             </div>
 
+            <div class="entry-media">
+              <img src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $Noticia->file_imagen ?>" alt="Foto" class="img-responsive">
+            </div>
+            
            
             <div class="post-meta-elements">
               <div class="post-meta-author"> <i class="fa fa-user"></i><a href="#"><?php echo $Noticia->autor ?></a> </div>
@@ -88,6 +92,27 @@
 
               <p><?php echo $Noticia->rtf_texto ?></p>
               <p><?php echo urldecode($Noticia->urlencode_html_para_embeber) ?></p>
+
+              <?php if ($Noticia->file_imagen2 <> '') { ?>
+              <div class="entry-media"> 
+                <img src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $Noticia->file_imagen2 ?>" alt="Foto" class="img-responsive"> 
+              </div>
+              <?php } ?>
+
+              <?php if ($Noticia->rtf_texto2 <> '') { ?>
+                <p><?php echo $Noticia->rtf_texto2 ?></p>
+              <?php } ?>
+
+              <?php if ($Noticia->file_imagen3 <> '') { ?>
+              <div class="entry-media"> 
+                <img src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $Noticia->file_imagen3 ?>" alt="Foto" class="img-responsive"> 
+              </div>
+              <?php } ?>
+
+              <?php if ($Noticia->rtf_texto3 <> '') { ?>
+                <p><?php echo $Noticia->rtf_texto3 ?></p>
+              <?php } ?>
+
 
               <div class="sharethis-inline-share-buttons"></div>
               <br><br><br>
@@ -152,6 +177,11 @@
               <!-- Begin .newsfeed -->
                 <table class="tabla_mercados">
                   <tr>
+                    <th colspan="4">
+                        <a href="<?php echo $pub_mercados_granos->url_enlace ?>" target="_blank"><img class="img-responsive" src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $pub_mercados_granos->file_imagen_pc ?>" alt=""></a> 
+                    </th>
+                  </tr>
+                  <tr>
                     <th style="text-align: left">GRANOS</th>
                     <th>CBOT</th>
                     <th colspan="2" style="text-align: center;">ROSARIO</th>
@@ -191,6 +221,11 @@
                     <td class="valor"><?php echo $Mercados[5]->valor_1 ?></td>
                     <td class="valor"><?php echo $Mercados[5]->valor_2 ?></td>
                     <td class="valor"><?php echo $Mercados[5]->valor_3 ?></td>
+                  </tr>
+                  <tr>
+                    <th colspan="4">
+                        <a href="<?php echo $pub_mercados_hacienda->url_enlace ?>" target="_blank"><img class="img-responsive" src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $pub_mercados_hacienda->file_imagen_pc ?>" alt=""></a> 
+                    </th>
                   </tr>
                   <tr>
                     <th colspan="2" style="text-align: left">Hacienda - Liniers</th>
@@ -236,6 +271,11 @@
                     <td colspan="2"><?php echo $Mercados[13]->mercado ?></td>
                     <td class="valor"><?php echo $Mercados[13]->valor_1 ?></td>
                     <td class="valor"><?php echo $Mercados[13]->valor_2 ?></td>
+                  </tr>
+                  <tr>
+                    <th colspan="4">
+                        <a href="<?php echo $pub_mercados_porcinos->url_enlace ?>" target="_blank"><img class="img-responsive" src="<?php echo ENV('PATH_PUBLIC') ?>storage/<?php echo $pub_mercados_porcinos->file_imagen_pc ?>" alt=""></a> 
+                    </th>
                   </tr>
                   <tr>
                     <th colspan="2" style="text-align: left">Porcinos</th>

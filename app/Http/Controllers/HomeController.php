@@ -140,6 +140,9 @@ class HomeController extends Controller
         $Noticia = Noticia::find($id);
         
         $pub_home_top_mercados = Publicidad::find(2);
+        $pub_mercados_granos = Publicidad::find(18);
+        $pub_mercados_hacienda = Publicidad::find(18);
+        $pub_mercados_porcinos = Publicidad::find(20);
         $Mercados = Mercado::all();
 
         return View('frontend.ver-noticia')
@@ -148,6 +151,9 @@ class HomeController extends Controller
         ->with('Destacadas', $Destacadas)
         ->with('Noticia', $Noticia)
         ->with('pub_home_top_mercados', $pub_home_top_mercados)
+        ->with('pub_mercados_granos', $pub_mercados_granos)
+        ->with('pub_mercados_hacienda', $pub_mercados_hacienda)
+        ->with('pub_mercados_porcinos', $pub_mercados_porcinos)
         ->with('Mercados', $Mercados);
     }
 
